@@ -1,0 +1,6 @@
+// resources/css/app.scss
+@use 'variables'; 
+
+nav {
+  background-color: variables.$primary-color;
+}

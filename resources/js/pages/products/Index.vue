@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
-import PlaceholderPattern from '@/components/PlaceholderPattern.vue';
+import Button from '@/components/ui/button/Button.vue';
+import { route } from 'ziggy-js';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -17,7 +18,9 @@ const breadcrumbs: BreadcrumbItem[] = [
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div>
-            Products list coming soon...
+            <Link :href="route('products.create')">
+                <Button>Create Product</Button>
+            </Link>
         </div>
     </AppLayout>
 </template>
